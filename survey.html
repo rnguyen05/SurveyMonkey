@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project 01</title>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ceviche+One|Special+Elite|Tauri" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!--Google Sign-in-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="818275019442-i677ngdm3h9clssjl5jn0a5se2646rjm.apps.googleusercontent.com">
+    
+</head>
+<body>
+
+
+<!--Survey mnokey -->
+<!--
+    Client ID: CJWWb_3tQdOwh741BmVvjg
+    Client Secret: 110645899480898404811110268714726626504
+
+    OAuth Redirect URL: https://www.surveymonkey.com -> 
+             Change To: https://rnguyen05.github.io/surveymonkey
+
+    Access Token: Envl31ENhaUr8hFccaa.iNNannjWF4BiOOvsjO7EYZY9HGdZPT7CNJ-.ZnXSsApBMOArcGRDAqzr7Zy7uQ6c-zOiFX6gfuCBxBqiHm20iblGhfzkkYcc9V3dS5IR6Gb9
+
+
+
+-->
+
+
+<!-- <script>
+    var obj = {
+          "fields": [
+            "title",
+            "date_created",
+            "date_modified",
+            "num_responses"
+          ],
+          "start_date":"2015-12-01 00:00:00"
+        }
+
+    $.ajax({
+        type:"POST",
+        dataType:"json",
+        contentType:'application/json; charset=utf-8',
+        url:"https://api.surveymonkey.net/v2/surveys/get_survey_list/?api_key="+apiKey,
+        data:JSON.stringify(obj),
+        beforeSend: function(xhr) {
+                        xhr.setRequestHeader('Authorization','bearer ' + token);
+                        xhr.setRequestHeader('Content-Type','application/json');
+                    } 
+    })
+     .success(createListPicker)
+     .error(handleError)
+</script> -->
+
+
+<script>
+    //var requestURL = "https://api.surveymonkey.com/v3/surveys/133835687/responses/bulk";
+    var client_id = "CJWWb_3tQdOwh741BmVvjg";
+    var requestURL = "https://api.surveymonkey.com/oauth/authorize?client_id="+client_id;
+    $.ajax ({
+        url: requestURL,
+        method: 'GET'
+    }
+    ).then(function(response){
+        console.log(repsonse);
+    });
+</script>
+
+
+
+
+
+
+        <!-- <script src="assets/javascript/g-apps.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
